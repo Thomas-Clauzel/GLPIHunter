@@ -22,7 +22,7 @@ rm nslookuptmp.txt > /dev/null 2>&1
 rm domaintmp.txt > /dev/null 2>&1
 rm ssltest.txt > /dev/null 2>&1
 rm ssltmp.txt > /dev/null 2>&1
-
+rm fqdn.txt > /dev/null 2>&1
 cat glpi.txt |  while read output
 do
     echo "check for $output"
