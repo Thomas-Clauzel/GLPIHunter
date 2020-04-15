@@ -27,7 +27,7 @@ cat glpi.txt |  while read output
 do
     echo "check for $output"
     nslookup $output > nslookuptmp.txt
-    domain=$(cat nslookuptmp.txt |awk '/name/{print $4}' | sed 's/.$//')
+    domain=$(cat nslookuptmp.txt |awk '/name/{print $4}' | sed 's/.$//' | head -n 1)
     echo "check for $domain"
     curl -k -IL https://$domain  --max-time 0,5 > ssltest.txt  2>&1 | grep "^HTTP\/"
     string0="HTTP/1.1 200 OK"
